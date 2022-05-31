@@ -1,1 +1,0 @@
-# seniorlabs-challenge
