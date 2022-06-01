@@ -36,8 +36,11 @@
 <h2>API :</h2>
 
 <p>A URL que deve ser chamada do sistema legado é a seguinte: 
+</br>
 * http://localhost:8080/v1/clocking/
+</br>
 ou
+</br>
 * https://seniorlabs-challenge.herokuapp.com/v1/clocking/
 
 Payload de exemplo para a requisição: 
