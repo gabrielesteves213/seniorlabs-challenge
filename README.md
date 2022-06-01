@@ -30,6 +30,7 @@
   <li>Instale uma IDE para subir o sistema, eu utilizei o IntelliJ</li>
   <li>Importe o projeto como uma Maven, para instalar as dependcências do Spring, e outras que adicionei no projeto</li>
   <li>Se não estiver utilizando o IntelliJ será necessário instalar o Lombok dentro de sua IDE</li>
+  <li>Instale o Docker, e rode no terminal o comando "docker-compose up" para subir um container com o banco de dados PostgreSQL. Tenha a certeza de que você já não        possua um container com o nome "seniorlabs-challenge"</li>
   <li> Rode o arquivo SeniorlabsChallengeApplication, que irá subir a API</li>
 </ol>
 
