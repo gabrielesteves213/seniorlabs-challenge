@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -34,10 +36,12 @@ public class ClockingService {
     }
 
     public ClockingDTO createClocking(@NonNull ClockingDTO dto){
-        dto.setIncludedAt(Timestamp.from(Instant.now()));
+        if(Objects.isNull(dto.getIncludedAt())){
+            dto.setIncludedAt(Timestamp.from(Instant.from(Instant.now().atZone(ZoneId.of("-3")))));
+        }
         ResponseEntity<ClockingResponse> response = this.mockyntonkClocking.createClocking(dto);
         if(response.getStatusCode().is2xxSuccessful()){
-            if(Objects.equals(response.getBody().getMessage(),"success")&&Objects.equals(response.getBody().getSystem(),"legacy")){
+                if(Objects.equals(response.getBody().getMessage(),"success")&&Objects.equals(response.getBody().getSystem(),"legacy")){
                 return ClockingMapper.toDto(this.clockingRepository.save(ClockingMapper.toEntity(dto)));
             }
         }

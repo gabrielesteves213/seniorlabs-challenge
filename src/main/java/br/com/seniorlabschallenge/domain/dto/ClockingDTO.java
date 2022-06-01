@@ -21,7 +21,7 @@ import java.util.Date;
 public class ClockingDTO {
 
     @JsonProperty("includadAt")
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd HH:mm:ss",timezone = "America/Sao_Paulo")
     private Timestamp includedAt;
 
     @JsonProperty("employeeId")
